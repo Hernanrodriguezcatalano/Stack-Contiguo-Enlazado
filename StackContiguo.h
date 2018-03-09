@@ -1,7 +1,8 @@
+#include "stdafx.h"
 #include<iostream>
 #include<array>
 
-const unsigned N = 32767;
+const unsigned N = 104;
 struct stack {
 	std::array<int, N> a;
 	unsigned i = 0;
