@@ -38,4 +38,6 @@ void vaciarStack(stack& s) {
 	{
 		s.a[i] = 0;
 	}
+	s.i = 0;
 }
+
