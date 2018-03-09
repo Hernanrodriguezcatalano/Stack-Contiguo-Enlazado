@@ -4,16 +4,17 @@
 #include<array>
 
 
-
-void push(stack& s, int x) {
-	assert (s.i < N) 
+void push(stack& s , int x) {
+	assert(s.i < N);
 		s.a.at(s.i) = x;
 		++s.i;
 
 }
 int pop(stack& s) {
-	assert (s.i > 0)
+	assert(s.i > 0);
+	{
 		--s.i;
+	}
 	return s.a.at(s.i);
 }
 	
@@ -33,8 +34,8 @@ unsigned length(const stack& s) {
 }
 
 void vaciarStack(stack& s) {
-	for (size_t i = 0; i < s.size; i++)
+	for (size_t i = 0; i < s.a.size; i++)
 	{
-		s.i = 0;
+		s.a[i] = 0;
 	}
 }
