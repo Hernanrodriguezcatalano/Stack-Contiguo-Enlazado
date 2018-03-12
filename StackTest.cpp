@@ -3,17 +3,15 @@
 #include <iostream>
 #include "StackContiguo.h"
 #include <Windows.h>
+
 using namespace std;
 
 
-
-stack Tstack;
-int a=0;
-int c;
-int main() {
-	
-	
-	cout << "Seleccione la funcion a testear:"<< endl<<"1.Push"<<endl<<"2.Pop"<<endl<<"3.Top"<<endl;
+static stack Tstack;
+static int a = 0;
+static int c;
+int main(){
+	cout << "Seleccione la funcion a testear:" << endl << "1.Push" << endl << "2.Pop" << endl << "3.Top" << endl;
 	cin >> c;
 	assert(c > 0 && c < 4);
 	switch (c)
@@ -21,9 +19,9 @@ int main() {
 	case 1:
 		while (a<N)
 		{
-		push(Tstack, rand() % 100);
-		cout << a << endl;
-		++a;
+			push(Tstack, rand() % 100);
+			cout << a << endl;
+			++a;
 		}
 		cout << "Intentando Pushear un elemento al Stack lleno...";
 		Sleep(3000);
@@ -39,6 +37,5 @@ int main() {
 		Sleep(3000);
 		top(Tstack);
 	}
-
 	
-}
+
