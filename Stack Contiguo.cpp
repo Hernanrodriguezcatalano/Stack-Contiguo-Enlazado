@@ -5,10 +5,10 @@
 #include<array>
 
 
-void push(stack& s , int x) {
+void push(stack& s, int x) {
 	assert(s.i < N);
-		s.a.at(s.i) = x;
-		++s.i;
+	s.a.at(s.i) = x;
+	++s.i;
 }
 
 int pop(stack& s) {
@@ -18,13 +18,13 @@ int pop(stack& s) {
 	}
 	return s.a.at(s.i);
 }
-	
+
 int top(const stack& s) {
 	assert(s.i > 0);
 	{
 		return s.a.at(s.i - 1);
 	}
-	
+
 
 }
 
@@ -40,27 +40,19 @@ void vaciarStack(stack& s) {
 	s.i = 0;
 }
 
-bool EsPalindromo(const stack& s){
-	//ir completando staux.a[j] 
+bool EsPalindromo(stack s) {
 	assert(s.a[0] != NULL);
-	int min,max;
 	stack staux;
-	min = s.a[0];
-	max = s.a[0];
-	push(staux, s.a[0]);
-	for (size_t i = 1; i < s.a.size(); i++)
+	for (size_t i = 0; i < s.i; i++)
 	{
-		if (s.a[i]>=max)
+		staux.a[i] = pop(s);
+	}
+	for (size_t i = 0; i < s.i; i++)
+	{
+		if (s.a[i] != staux.a[i])
 		{
-			max = s.a[i];
-		}
-		if (s.a[i]<=min)
-		{
-			min = s.a[i];
-		}
-		if (s.a[i]>=min && s.a[i] <= max)
-		{
-
+			return false;
 		}
 	}
+	return true;
 }
