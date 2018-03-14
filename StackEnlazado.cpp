@@ -11,6 +11,7 @@ void push(Stack& s, int x) {
 	++s.nivel;
 }
 int pop(Stack& s) {
+
 	assert(s.nivel != 0); 
 		Nodo *p = s.first;
 		s.first = s.first->next;
@@ -60,10 +61,27 @@ bool EsPalindromo(Stack s) {
 	//2.si es impar ignorar el medio
 	//3.revertir la segunda lista
 	//4.comparar las listas
-
+	Nodo *p;
+	Nodo *q;
+	Nodo * corte;
 	assert (s.nivel != NULL);
-	Stack staux;
+	while (1)
+	{
+		p = p->next->next;
+		if (p->next == NULL)
+		{
+			corte = q->next->next; break;
+		}
+		if (p == NULL)
+		{
+			corte = q->next; break;
+		}
+		q = q->next
+	}
+	q->next = NULL
+	/*Stack staux;
 	int Long = s.nivel;
+	*/
 	//Nodo *temp = s.first;
 	/*while (temp != NULL)
 	{
@@ -81,7 +99,7 @@ bool EsPalindromo(Stack s) {
 	temp->next = NULL;
 	*/
 
-	for (size_t i = 0; i < Long-1; i++)
+	/*for (size_t i = 0; i < Long-1; i++)
 	{
 		staux.first->value = s.first->value;
 		staux.nivel = s.nivel;
@@ -94,5 +112,5 @@ bool EsPalindromo(Stack s) {
 		}
 	}
  		return true;
+		*/
 }
-   
