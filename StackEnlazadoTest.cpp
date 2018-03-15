@@ -9,7 +9,7 @@ using namespace std;
 static Stack Pstack;
 static Stack Tstack;
 static int a=0, c;
-/*int main(){
+int main(){
 	
 		cout << "Seleccione la funcion a testear:" << endl << "1.Push" << endl << "2.Pop" << endl << "3.Top" << endl;
 		cin >> c;
@@ -42,4 +42,4 @@ static int a=0, c;
 			top(Tstack);
 		}
 
-}*/
+}
