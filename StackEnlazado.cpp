@@ -34,83 +34,26 @@ void vaciarStack(Stack& s) {
 }
 
 
-/*void ReverseStack(Stack s)
-{
-	assert(s.nivel != NULL);
-	Stack staux;
-	Nodo *temp = s.first;
-	while (temp != NULL)
-	{
-		push(s, temp->value);
-		temp = temp->next;
-	}
-	temp->value = top(s);
-	s.first = temp;
-	while (s.nivel != NULL)
-	{
-		temp->next->value = top(s);
-		pop(s);
-		temp = temp->next;
-	}
-	temp->next = NULL;
-}*/
-
 bool EsPalindromo(Stack s) {
-	//condiciones para true
-	//1.cortar las lista a la mitad
-	//2.si es impar ignorar el medio
-	//3.revertir la segunda lista
-	//4.comparar las listas
-	Nodo *p;
-	Nodo *q;
-	Nodo * corte;
-	assert (s.nivel != NULL);
-	while (1)
+	
+	assert(s.nivel != NULL);
+	
+	Stack staux;
+	Stack staux2;
+	unsigned Long = s.nivel;
+	staux = s;
+	
+	for (size_t i = 0; i < Long ; i++)
 	{
-		p = p->next->next;
-		if (p->next == NULL)
-		{
-			corte = q->next->next; break;
-		}
-		if (p == NULL)
-		{
-			corte = q->next; break;
-		}
-		q = q->next
+		push(staux2, pop(s));
 	}
-	q->next = NULL
-	/*Stack staux;
-	int Long = s.nivel;
-	*/
-	//Nodo *temp = s.first;
-	/*while (temp != NULL)
-	{
-		push(s, temp->value);
-		temp = temp->next;
-	}
-	temp->value = top(s);
-	s.first = temp;
-	while (s.nivel!= NULL)
-	{
-		temp->next->value = top(s);
-		pop(s);
-		temp = temp->next;
-	}
-	temp->next = NULL;
-	*/
-
-	/*for (size_t i = 0; i < Long-1; i++)
-	{
-		staux.first->value = s.first->value;
-		staux.nivel = s.nivel;
-	}
+	
 	for (size_t i = 0; i < Long; i++)
 	{
-		if (s.first->value != staux.first->value)
-		{
-			return false;
-		}
+		if (staux.first->value != staux2.first->value)
+		{return false;}
+		
+		staux.first->next;
+		staux2.first->next;
 	}
- 		return true;
-		*/
-}
+	return true;
