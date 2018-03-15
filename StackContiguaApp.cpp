@@ -1,39 +1,53 @@
 #include "stdafx.h"
-#include <cassert>
 #include <iostream>
-#include "StackContiguo.h"
-#include <Windows.h>
+#include <assert.h>
+#include "StackEnlazado.h"
+
 using namespace std;
-static unsigned a=1;
-static int c;
-static stack Tstack;
+
+static Stack Tstack;
+static int a = 0, c;
+using namespace std;
+
 int main() {
-	while(a<2){
-		cout << "Ingresa un para para introducir al Stack: ";
-		cin >> c;
-		push(Tstack,c);
-		cout << "1.Para introducir otro valor.[MAX 800]" << endl << "2.Para continuar." << endl;
-		cin >> a;
-		assert(a>0 && a<3);
+	
+		while (a<2) {
+			cout << "Ingresa un para para introducir al Stack: ";
+			cin >> c;
+			push(Tstack, c);
+			cout << "1.Para introducir otro valor.[MAX 800]" << endl << "2.¿Es Palindromo?" << endl;
+			cin >> a;
+			assert(a>0 && a<3);
 
-	}
+		}
 
-	cout << "El Stack: "<<endl;
-	for (size_t i = 0; i < Tstack.i; i++)
+	cout << "El Stack es: " << endl;
+	while (a < Tstack.nivel)
 	{
-		cout << "[" << Tstack.a[i] << "]" << endl;
+		push(Tstack, rand() % 100);
+		cout << "[" << Tstack.first->value << "]" << endl;
+		++a;
+		Tstack.first->next;
 	}
-
+	
 	if (EsPalindromo(Tstack))
-	{	
-		
+	{
+
 		cout << "Es Palindromo";
 		cin >> a;
 	}
 	else
-		{
-		
+	{
+
 		cout << "No es Palindromo";
 		cin >> a;
 	}
+
+	/*cout<< "El Stack invertido es :";
+	while (a < Tstack.nivel)
+	{
+		push(Tstack, rand() % 100);
+		cout << "[" << Tstack.first->value << "]" << endl;
+		++a;
+	}*/
 }
