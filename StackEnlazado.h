@@ -17,4 +17,3 @@ int top(const Stack&);
 unsigned length(const Stack&);
 void vaciarStack(Stack&); 
 bool EsPalindromo(Stack);
-void ReverseStack(Stack);
